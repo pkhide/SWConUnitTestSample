@@ -6,6 +6,10 @@ package camt.testexercise;
 public class VendingMachine {
     private Manager manager = new Manager();
 
+    public void setManager(Manager manager) {
+        this.manager = manager;
+    }
+
     public double calculateTotalPrice(double price) {
         double totalPrice = price * (1 + manager.getVat() / 100);
         double fraction = totalPrice - (int) totalPrice;
@@ -16,6 +20,8 @@ public class VendingMachine {
             newFraction = .75;
         } else if (fraction > .25) {
             newFraction = .5;
+        } else if (fraction == .00) {
+            newFraction = .0;
         } else
             newFraction = .25;
         return (int) totalPrice + newFraction;
