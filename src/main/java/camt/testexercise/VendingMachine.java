@@ -14,6 +14,7 @@ public class VendingMachine {
         double totalPrice = price * (1 + manager.getVat() / 100);
         double fraction = totalPrice - (int) totalPrice;
         double newFraction = 0;
+
         if (fraction > .75) {
             newFraction = 1;
         } else if (fraction > .5) {
