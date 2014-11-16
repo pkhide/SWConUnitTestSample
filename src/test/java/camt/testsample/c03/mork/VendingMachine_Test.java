@@ -24,5 +24,5 @@ public class VendingMachine_Test {
 
         when(manager.getVat()).thenReturn(6.5);
         assertEquals(2.25,vm.calculateTotalPrice(2.0),0.0001);
-    }
+    } 
 }
